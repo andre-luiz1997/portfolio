@@ -1,1 +1,403 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import '@fontsource/rubik';
+@import '@fontsource/playfair-display';
+
+@import './animations.scss';
+@import './vars.scss';
+
+// $main-color:            #f7ba2c;
+// $secondary-color:       #ea5459;
+// $font-color:            #f1faee;
+// $background-color:      #141313; 
+// $main-gradient:           linear-gradient($main-color 0%, $secondary-color 100%);
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #{$background-color};
+    color: #{$font-color};
+    font-family: 'Playfair Display';
+    overflow-x: hidden;
+}
+
+.hide{
+    display: none!important;
+}
+
+.animate-spin{
+    border-color: #{$font-color};
+}
+
+::-webkit-scrollbar{
+    width: 12px;
+	background-color: #{$background-color};
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    box-shadow:  inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #{$font-color};
+}
+
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #{$background-color};
+}
+
+a {
+    transition: all .5s ease;
+    position: relative;
+
+    &:after{
+        transition: all .5s linear;
+        content: "";
+        width: 0%;
+        opacity: 0;
+        height: 1px;
+        background: #{$main-color};
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    &:hover{
+        &:after{
+            width: 100%;
+            opacity: 1;
+        }
+        color: #{$main-color};
+    }
+}
+
+section.topbar{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    z-index: 1;
+    nav{
+        & a{
+            transition: all .5s ease;
+            padding: 20px;
+            text-transform: uppercase;
+            position: relative;
+    
+            &:after{
+                transition: all .5s linear;
+                content: "";
+                width: 0%;
+                opacity: 0;
+                height: 1px;
+                background: #{$main-color};
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+    
+            &:hover{
+                &:after{
+                    width: 100%;
+                    opacity: 1;
+                }
+                color: #{$main-color};
+            }
+        }
+    }
+}
+
+
+
+section.hero{
+    height: 100vh;
+    position: relative;
+    z-index: 0;
+
+    & .heroTitle{
+        padding-left: 20px;    
+        padding-bottom: 20px;
+        font-size: 6rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        overflow-x: hidden;
+
+        &:before{
+            content: 'aaaaaaaaaaaaaaaaaaa';
+            text-decoration: wavy .5rem #{$main-color} underline;
+            color: transparent;
+            position: absolute;
+            top: 10px;
+            animation: wavy 1s linear infinite;
+            width: calc(100% + 27px);
+        }
+    }
+
+    & .heroSubtitle{
+        padding-left: 20px;
+        font-size: 2rem;
+    }
+
+    img.profileImg{
+        height: auto;
+        width: 50%;
+        filter: grayscale(100%);
+        opacity: .7;
+        position: absolute;
+        right: -50px;
+        bottom: 0;
+        animation: 1s linear ease-up;
+
+        &:hover{
+            transition: filter 2s ease;
+            // filter: none;
+        }
+    }
+}
+
+section.about_me{
+    min-height: 200px;
+
+    & h2{
+        font-size: 40px;
+        text-transform: uppercase;
+    }
+
+    .paragraph{
+        text-align: justify;
+        text-indent: 60px;
+
+        & span{
+            font-size: 18px;
+            line-height: 30px;
+            position: relative;
+    
+            &.highlight{
+                z-index: 2;
+                font-weight: bold;
+                padding-left: 10px;
+                padding-right: 10px;
+                background-image: linear-gradient(
+                    90deg,rgba(255,255,255,0) 50%,#{$main-color} 0);
+                color: #{$background-color};
+                background-position: 0;
+                background-size: 200%;
+                &.highlighted{
+                    animation: highlight 0.5s linear forwards;
+                }
+            }
+            
+            
+        }
+    }
+}
+
+@keyframes highlight {
+    from{
+        background-position: 0;
+    }
+    to{
+        background-position: -100%;
+    }
+}
+
+
+section.skills{
+    position: relative;
+    & h2{
+        font-size: 40px;
+        text-transform: uppercase;
+    }
+
+    & .title{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 30px;
+        & i{
+            font-size: 40px;
+        }
+    }
+
+    & .content{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        & .text{
+            margin-left: 30px;
+        }
+    }
+
+    & .icon{
+        cursor: pointer;
+        transition: all .5s ease;
+        & *{
+            transition: all .5s ease;
+        }
+
+        &:hover{
+            & > svg{
+                color: #{$main-color};
+            }        
+        }
+
+        &  > svg{
+            width: 40px!important;
+            height: 40px!important;
+            
+        }
+    }
+
+    & .projectsContainer{
+        position: relative;
+
+        & .timeline{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            border-left: 2px solid #{$main-color};
+            margin-top: 15px;
+            margin-left: 10px;
+            
+            &.animate{
+                height: 90%;
+                transition: height 10s linear;
+            }
+        }
+    }
+   
+
+    & .skill{
+        position: relative;
+        margin-left: 60px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+
+        & .url {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        &.timelineStep{
+            opacity: 0;
+
+            &.animate{
+                animation: easeIn .5s linear forwards;
+            }
+        }
+
+        & .title{
+            color: #{$main-color};
+            text-transform: uppercase;
+            font-size: 1.5rem;
+        }
+
+        &:before{
+            content: "";
+            background-color: #{$main-color};
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            position: absolute;
+            left: -60px;
+            top: 10px;
+        }
+    }
+}
+
+section.education{
+    min-height: 200px;
+    position: relative;
+    & h2{
+        font-size: 40px;
+        text-transform: uppercase;
+    }
+
+    & .title{
+        color: #{$main-color};
+        text-transform: uppercase;
+        font-size: 1.5rem;
+    }
+
+    & .location{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.card-container {
+    position: relative;
+    transition: all .5s ease;
+    & .scrollable{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        overflow-x: auto;
+        column-gap: 20px;
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+        padding-right: 20%;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    
+    }
+
+    
+    & .card{
+        @media (min-width: 768px) {
+            flex: 0 0 33.33%;
+        }
+
+        @media (max-width: 767px){
+            flex: 0 0 100%;
+        }
+        min-height: 200px;
+        background-color: #{$background-light};
+        border-radius: 20px;
+        padding: 20px;
+        cursor: pointer;
+        
+        & *{
+            pointer-events: none;
+        }
+    }
+}
+
+.arrow{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    bottom: 60px;
+    background-color: #{$main-color};
+    border-radius: 100%;
+    color: #{$background-color};
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 25px;
+
+    &.arrowLeft{
+        left: 80px;
+    }
+
+    &.arrowRight{
+        right: 80px;
+    }
+}

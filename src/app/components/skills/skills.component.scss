@@ -1,0 +1,30 @@
+@import '../../../vars.scss';
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(3, 100px);
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    & i{
+        font-size: 50px;
+        transition: all .5s ease;
+        cursor: pointer;
+        &:hover{
+            color: #{$main-color};
+            text-shadow: 0px 0px 5px #{$main-color};
+        }
+
+        &.small{
+            font-size: 50px;
+        }
+        &.medium{
+            font-size: 60px;
+        }
+        &.large{
+            font-size: 70px;
+        }
+        
+    }
+}

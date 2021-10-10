@@ -1,0 +1,66 @@
+@keyframes easeIn{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes ease-down{
+    
+    0%{
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes ease-up{
+    
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+
+.translated-right{
+    position: absolute;
+    top: 0;
+    right: 100%;
+}
+
+.translated-left{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    animation: 1s translate-left linear;
+}
+
+@keyframes translate-left {
+    0%{
+        right: 0%;
+    }
+
+    100%{
+        right: 100%;
+    }
+}
+
+@keyframes wavy {
+    0%{
+        left: -15px;
+    }
+    100%{
+        left: 18px;
+    }
+}

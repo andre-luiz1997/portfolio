@@ -1,0 +1,18 @@
+<section class="topbar">
+    <nav class="relative">
+        <div class="flex justify-between px-20 py-10 relative">
+            <div class="flex">
+                <a href="#aboutMe" class="item">{{lang.about_me}}</a>
+                <a href="#skills" class="item">{{lang.experiences}}</a>
+                <a href="#education" class="item">{{lang.education}}</a>
+                <a href="#" class="item">{{lang.contact}}</a>
+            </div>
+            <a href="#" (click)="openLanguageModal()" class="relative no-line">
+                <span class="flag-icon" [ngClass]="langIcon !== undefined ? langIcon : '' "></span>
+                <div id="languageModal" #languageModal [ngClass]="showLanguageModal === true ? '' : 'hide' ">
+                    <button *ngFor="let language of availableLanguages" (click)="switchLanguage(language.lang)" class="flag-icon {{language.icon}}"></button>
+                </div>
+            </a>            
+        </div>
+    </nav>
+</section>

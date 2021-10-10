@@ -19,7 +19,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "paths": {
+      "@app/svg/*": ["src/app/svg/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -28,3 +34,4 @@
     "strictTemplates": true
   }
 }
+

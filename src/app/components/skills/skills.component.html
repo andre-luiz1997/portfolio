@@ -1,0 +1,15 @@
+<section class="skills">
+    <div class="flex flex-col justify-center items-start px-20 py-20" [ngClass]="selectedSkill ? 'translated-left' : '' ">
+        <h2>{{lang.experiences}}</h2>
+        <div class="projectsContainer">
+            <div class="timeline"></div>
+            <div *ngFor="let project of projects" class="skill timelineStep">
+                <h6 class="title" [innerHTML]="lang.project_dsc[project.key]?.title"></h6>
+                <div>
+                    <a class="url" style="font-style: italic;" target="_blank" *ngIf="lang.project_dsc[project.key]?.url !== undefined" href="{{lang.project_dsc[project.key]?.url}}">{{lang.project_dsc[project.key]?.url}}</a>
+                </div>
+                <p class="description" [innerHTML]="lang.project_dsc[project.key]?.description"></p>
+            </div>
+        </div>
+    </div>
+</section>

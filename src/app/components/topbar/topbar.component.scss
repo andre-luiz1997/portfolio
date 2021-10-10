@@ -1,0 +1,34 @@
+@import '../../../animations.scss';
+
+a.no-line:after{
+    display: none;
+}
+
+.flag-icon{
+    font-size: 20px;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    border: 1px solid white;
+    filter: grayscale(1);
+    transition: all .5s ease;
+
+    &:hover{
+        filter: none; 
+    }
+}
+
+#languageModal{
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 5px;
+    row-gap: 5px;
+    top: 55px;
+    right: 20px;
+    position: absolute; 
+
+    // & .flag-icon{
+    //     animation: ease-down .5s ease;
+    // }
+}
