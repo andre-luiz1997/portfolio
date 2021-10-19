@@ -6,7 +6,7 @@
                 <div class="card education-item flex flex-col items-start" *ngFor="let item of educationItems">
                     <h6 class="title">{{lang.education_dsc[item].course}}</h6>
                     <small class="duration">{{lang.education_dsc[item].start}} - {{lang.education_dsc[item].end !== undefined ? lang.education_dsc[item].end : lang.ongoing}}</small>
-                    <span class="location"><svg-icon key="globe" color="white" size="md" class="flex items-center"></svg-icon>{{lang.education_dsc[item].location}}</span>
+                    <span class="location" ><svg-icon key="globe" color="white" size="md" class="flex items-center" style="margin-right: 10px;"></svg-icon>{{lang.education_dsc[item].location}}</span>
                     <p *ngIf="lang.education_dsc[item].description !== undefined">{{lang.education_dsc[item].description}}</p>
                 </div>
             </div>

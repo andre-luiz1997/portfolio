@@ -20,6 +20,8 @@ import {appPinIcon} from '@app/svg/pin';
 import {appGlobeIcon} from '@app/svg/globe';
 import {appChevronLeftIcon} from '@app/svg/chevron-left';
 import {appChevronRightIcon} from '@app/svg/chevron-right';
+import { ContactComponent } from './components/contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {appChevronRightIcon} from '@app/svg/chevron-right';
     HeroComponent,
     AboutMeComponent,
     SkillsComponent,
-    EducationComponent
+    EducationComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,9 @@ import {appChevronRightIcon} from '@app/svg/chevron-right';
         appChevronLeftIcon,
         appChevronRightIcon
       ],
-    })
+    }),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     LangService

@@ -77,6 +77,89 @@ a {
     }
 }
 
+.row{
+    display: flex;
+    width: 100%;
+
+    & .col-sm-12{
+        flex: 1;
+    }
+
+    & .col-md-6{
+        flex: 50%;
+    }
+}
+
+.custom-form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.form-control{
+    background: transparent;
+    border-radius: 15px;
+    width: 100%;
+    transition: all .5s ease;
+    padding: 20px 20px;
+
+    &:focus{
+        outline: none;
+        border-color: #{$main-color};
+        outline: #{$main-color};
+        --tw-ring-color: #{$main-color};
+    }
+
+    &::placeholder{
+        color: #{$font-color};
+        position: absolute;
+        left: 20px;
+        z-index: -1;
+        pointer-events: none;
+        transition: all .5s ease;
+    }
+
+    &:focus{
+        &::placeholder{
+            font-size: 12px;
+            top: 0;
+            color: #{$font-color}!important;
+        }
+    }
+
+    &:not(:focus){
+        &::placeholder{
+            top: calc(50% - 12px);
+        }
+    }
+
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn{
+    border-radius: 15px;
+    padding: 20px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+
+    &.btn-primary{
+        border: 2px solid #{$main_color};
+        color: #{$main_color};
+
+        &:hover{
+            background-color: #{$main_color};
+            color: #{$background-color}; 
+        }
+    }
+}
+
 section.topbar{
     width: 100%;
     position: absolute;
@@ -399,5 +482,20 @@ section.education{
 
     &.arrowRight{
         right: 80px;
+    }
+}
+
+section.contact{
+    min-height: 200px;
+    position: relative;
+    & h2{
+        font-size: 40px;
+        text-transform: uppercase;
+    }
+
+    & .title{
+        color: #{$main-color};
+        text-transform: uppercase;
+        font-size: 1.5rem;
     }
 }

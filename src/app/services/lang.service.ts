@@ -149,6 +149,7 @@ export class LangService {
       },
       // S ------------------------------------------------------------
       'skills': 'Habilidades',
+      'send_message': 'Enviar mensagem',
 
       // T ------------------------------------------------------------
       'typescript': 'Typescript',
@@ -157,7 +158,11 @@ export class LangService {
       'wordpress': 'Wordpress',
       // Y ------------------------------------------------------------
       'year': 'Ano',
-      'years': 'Anos'
+      'years': 'Anos',
+      'your_name': 'Seu nome',
+      'your_best_email': 'Seu melhor email',
+      'your_message': 'Sua mensagem',
+
     },'en-US':{
       // A ------------------------------------------------------------
       'about_me': 'About me',
