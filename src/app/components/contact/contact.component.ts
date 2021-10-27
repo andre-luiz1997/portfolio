@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LangService } from 'src/app/services/lang.service';
@@ -12,7 +13,8 @@ export class ContactComponent implements OnInit {
   form: any;
   constructor(
     private langService: LangService,
-    private formBuilder: FormBuilder
+    private httpClient: HttpClient
+
   ) {
     this.lang = this.langService.getTranslation();
   }
@@ -40,4 +42,15 @@ export class ContactComponent implements OnInit {
     });
   }
 
+  onSubmit(){
+    console.log(this.form.value);
+    this.httpClient.post('http://localhost:2020/mail', this.form.value).subscribe((response) => {
+      console.log(response);
+    });
+    
+    // this.httpClient.post('https://portfolio-server-andre-luiz1997.vercel.app', this.form.value).subscribe((response) => {
+    //   console.log(response);
+    // });
+
+  }
 }
