@@ -6,14 +6,15 @@
 <div class="company-block">
     <div class="company"><span class="company-name">App Marketing</span><span class="where">{{lang.experienceLocation}}</span></div>
     <ol class="jobs">
-        <li *ngFor="let job of lang.jobs; let i = index" class="job" [class.current]="!periods[i].end">
-            <div>
-                <div class="job-top">
-                    <h3>{{job.title}}</h3>
-                    <span class="period">{{range(periods[i])}} · <b>{{duration(periods[i])}}</b></span>
-                </div>
+        <li *ngFor="let job of lang.jobs; let i = index" class="job">
+            <div class="job-main">
+                <h3>{{job.title}}</h3>
                 <p>{{job.text}}</p>
                 <div class="tags"><span *ngFor="let tag of job.tags" class="tag">{{tag}}</span></div>
+            </div>
+            <div class="job-when">
+                <span class="period">{{range(periods[i])}}</span>
+                <span class="duration">{{duration(periods[i])}}</span>
             </div>
         </li>
     </ol>

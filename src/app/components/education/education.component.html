@@ -5,13 +5,13 @@
 </div>
 <ul class="jobs">
     <li *ngFor="let degree of lang.degrees" class="job">
-        <div>
-            <div class="job-top">
-                <h3>{{degree.title}}</h3>
-                <span class="period">{{degree.years}}</span>
-            </div>
+        <div class="job-main">
+            <h3>{{degree.title}}</h3>
             <p>{{degree.institution}}</p>
             <div *ngIf="degree.note" class="tags"><span class="tag">{{degree.note}}</span></div>
+        </div>
+        <div class="job-when">
+            <span class="period">{{degree.years}}</span>
         </div>
     </li>
 </ul>
