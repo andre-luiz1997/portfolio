@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Translation } from 'src/app/i18n/translation.model';
 import { LangService } from 'src/app/services/lang.service';
 
 @Component({
-    selector: 'app-about-me',
-    templateUrl: './about-me.component.html',
-    styleUrls: ['./about-me.component.scss'],
+    selector: 'app-languages',
+    templateUrl: './languages.component.html',
     standalone: false
 })
-export class AboutMeComponent implements OnInit {
-  lang: any;
+export class LanguagesComponent implements OnInit {
+  lang: Translation;
+
   constructor(
     private langService: LangService
   ) {
@@ -20,6 +21,5 @@ export class AboutMeComponent implements OnInit {
       this.lang = this.langService.getTranslation();
     })
   }
-
 
 }

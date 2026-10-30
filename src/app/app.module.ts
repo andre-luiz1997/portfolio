@@ -1,54 +1,41 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
-import { flagBr, flagFr, flagUs } from '@ng-icons/flag-icons';
-import { heroGlobeAlt } from '@ng-icons/heroicons/outline';
-import { providePrimeNG } from 'primeng/config';
-import { Carousel } from 'primeng/carousel';
-import { Popover } from 'primeng/popover';
-import { ProgressSpinner } from 'primeng/progressspinner';
-import { Timeline } from 'primeng/timeline';
-import { Toolbar } from 'primeng/toolbar';
+import {
+  simpleAngular, simpleCapacitor, simpleDocker, simpleExpress, simpleGit, simpleIonic, simpleJavascript, simpleLinux,
+  simpleMongodb, simpleMysql, simpleNestjs, simpleNodedotjs, simplePhp, simpleReact, simpleRedis, simpleTypescript
+} from '@ng-icons/simple-icons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { HeroComponent } from './components/hero/hero.component';
-import { AboutMeComponent } from './components/about-me/about-me.component';
 import { SkillsComponent } from './components/skills/skills.component';
-import { LangService } from './services/lang.service';
+import { ExperienceComponent } from './components/experience/experience.component';
 import { EducationComponent } from './components/education/education.component';
-import { PortfolioPreset } from './theme';
+import { LanguagesComponent } from './components/languages/languages.component';
+import { LangService } from './services/lang.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopbarComponent,
     HeroComponent,
-    AboutMeComponent,
     SkillsComponent,
-    EducationComponent
+    ExperienceComponent,
+    EducationComponent,
+    LanguagesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgIconComponent,
-    Carousel,
-    Popover,
-    ProgressSpinner,
-    Timeline,
-    Toolbar
+    NgIconComponent
   ],
   providers: [
     LangService,
-    provideAnimationsAsync(),
-    provideIcons({ heroGlobeAlt, flagBr, flagUs, flagFr }),
-    providePrimeNG({
-      theme: {
-        preset: PortfolioPreset,
-        options: { darkModeSelector: '.app-dark' }
-      }
+    provideIcons({
+      simpleTypescript, simpleJavascript, simpleNodedotjs, simpleNestjs, simpleExpress, simpleAngular, simpleIonic,
+      simpleCapacitor, simpleMongodb, simpleMysql, simpleRedis, simpleDocker, simpleLinux, simpleGit, simplePhp, simpleReact
     })
   ],
   bootstrap: [AppComponent]

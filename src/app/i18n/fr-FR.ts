@@ -1,139 +1,49 @@
 import { Translation } from './translation.model';
 
 export const frFR: Translation = {
-  // A ------------------------------------------------------------
-  about_me: 'À propos de moi',
-  about_me_p1: '<span>Je suis André Luiz, ingénieur en informatique diplômé du CEFET-MG, travaillant dans le</span> <span class="highlight">développement Web/Mobile</span> <span>avec un accent sur le marketing digital et les plateformes de transformation numérique, telles que la gestion de CRM, les environnements SaaS (Software as a Service) et les API REST en PHP et Node.js avec des bases de données MySQL, Postgres et MongoDB.</span>',
-  about_me_p2: '<span>J\'étudie l\'informatique depuis 2015, année de mon entrée à l\'université. En 2019-2020, j\'ai été sélectionné pour le programme de mobilité académique internationale du CEFET-MG et je suis parti à Grenoble, en France, pour effectuer un <span class="highlight">échange universitaire à l\'Institut Universitaire de Technologie 1 (IUT1)</span>, où j\'ai obtenu une Licence Professionnelle en Réseaux de Télécommunications et Sécurité Numérique.</span>',
-  about_me_p3: '<span>Je crois profondément en la capacité de la technologie et de la programmation à changer le monde et la réalité de millions de personnes. C\'est pourquoi je cherche toujours à rester actif dans mes études et dans un apprentissage continu, en étant participatif et collaboratif, car j\'ai beaucoup à apprendre des personnes qui m\'entourent. J\'ai une approche active et dynamique du travail. J\'ai un esprit créatif et je suis <span class="highlight">motivé par de nouveaux défis et de nouvelles tâches qui peuvent stimuler ma créativité</span> et développer mes compétences personnelles.</span>',
-  angularjs: 'Angular',
+  nav: { experience: 'Expérience', education: 'Formation', languages: 'Langues' },
+  hello: 'Salut, je suis',
+  role: 'Lead technique · Architecture logicielle · Full Stack',
+  catchphrase: 'De la compréhension du métier <mark>à la production.</mark>',
+  summary: 'Lead technique hands-on avec 6 ans en développement logiciel, plus de 3 à la tête d\'une équipe, avec l\'IA comme multiplicateur de livraison.',
+  photoAlt: 'Photo en noir et blanc d\'André Luiz',
+  stackLabel: 'Stack au quotidien',
 
-  // C ------------------------------------------------------------
-  codeigniter: 'CodeIgniter',
-  css3: 'CSS3',
-
-  // E ------------------------------------------------------------
-  education: 'Formation',
-  education_dsc: {
-    knn: {
-      start: 2020,
-      location: 'Timóteo - MG',
-      course: 'Cours de maîtrise de la langue française',
-      institution: 'KNN'
+  experienceTitle: 'Expérience professionnelle',
+  experienceLocation: 'Timóteo – MG, Brésil',
+  current: 'aujourd\'hui',
+  months: ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'],
+  duration: { year: 'an', years: 'ans', month: 'mois', months: 'mois', joiner: ' ' },
+  jobs: [
+    {
+      title: 'Lead technique · Ingénieur logiciel',
+      text: 'Je dirige l\'équipe du cadrage à la production, en restant impliqué dans l\'architecture, la revue de code et l\'implémentation.',
+      tags: ['Leadership technique', 'Architecture', 'Mentorat', 'IA dans le flux']
     },
-    cefet_mg: {
-      start: 2015,
-      end: 2021,
-      location: 'Timóteo - MG',
-      course: 'Diplôme d\'ingénieur en informatique',
-      institution: 'CEFET-MG'
+    {
+      title: 'Ingénieur logiciel confirmé',
+      text: 'J\'ai conçu une plateforme SaaS avec PIX qui confirme les paiements automatiquement, utilisée par des écoles, des commerces et des terrains de sport au Brésil et au Chili.',
+      tags: ['PIX', 'SaaS', 'NestJS', 'Angular']
     },
-    iut1: {
-      start: 2019,
-      end: 2020,
-      location: 'Grenoble - France',
-      course: 'Licence Professionnelle Réseaux, Télécommunications et Sécurité',
-      institution: 'Institut Universitaire de Technologie 1 - UGA'
-    },
-    iniciacao_cientifica: {
-      start: 2018,
-      end: 2020,
-      location: 'Timóteo - MG',
-      course: 'Initiation à la recherche scientifique (bénévole)',
-      institution: 'CEFET-MG',
-      description: 'Développement d\'une plateforme éducative axée sur les Technologies de Construction, avec visualisation 3D des éléments de la discipline en Three.js'
-    },
-    ipc: {
-      start: 2018,
-      end: 2019,
-      location: 'Timóteo - MG',
-      course: 'Projet d\'extension universitaire',
-      institution: 'CEFET-MG',
-      description: 'Projet IPC : Introduction à la programmation informatique. Étudiant chercheur sur les méthodes d\'enseignement et d\'évaluation de la pensée computationnelle auprès d\'élèves des écoles publiques de la ville'
-    },
-    ccaa: {
-      start: 2014,
-      end: 2017,
-      location: 'Timóteo - MG',
-      course: 'Cours de maîtrise de la langue anglaise',
-      institution: 'CCAA Timóteo'
+    {
+      title: 'Stagiaire en génie logiciel',
+      text: 'Développement full stack avec Angular et Node.js/NestJS, intégrés à MySQL et MongoDB via des API REST.',
+      tags: ['Angular', 'NestJS', 'MySQL', 'API REST']
     }
-  },
-  experience: 'Expérience',
-  experiences: 'Expériences',
-  express: 'ExpressJs',
+  ],
 
-  // H ------------------------------------------------------------
-  html5: 'HTML5',
+  educationTitle: 'Formation académique',
+  degrees: [
+    { years: '2023 – 2024', title: 'Spécialisation en architecture logicielle', institution: 'FIAP', note: 'Monolithe → microservices NestJS sur AWS' },
+    { years: '2015 – 2021', title: 'Diplôme d\'ingénieur en informatique', institution: 'CEFET-MG' },
+    { years: '2019 – 2020', title: 'Licence Professionnelle Réseaux, Mobilité et Sécurité', institution: 'Université Grenoble Alpes', note: 'Échange · Grenoble, France' }
+  ],
 
-  // I ------------------------------------------------------------
-  ionic: 'Ionic',
-
-  // J ------------------------------------------------------------
-  javascript: 'Javascript',
-
-  // L ------------------------------------------------------------
-  laravel: 'Laravel',
-
-  // M ------------------------------------------------------------
-  mysql: 'MySQL',
-  mongodb: 'MongoDB',
-
-  // N ------------------------------------------------------------
-  nodejs: 'NodeJS',
-
-  // O ------------------------------------------------------------
-  ongoing: 'En cours',
-
-  // P ------------------------------------------------------------
-  php: 'PHP',
-  portfolio: 'Portfolio',
-  profileName: 'André Luiz',
-  profilePosition: 'Développeur Web FullStack',
-  project: 'Projet',
-  projects: 'Projets',
-  project_dsc: {
-    appfintech: {
-      title: 'AppFintech',
-      subtitle: 'Projet d\'entreprise',
-      description: 'Écosystème de transactions via PIX, permettant l\'intégration avec des terminaux de point de vente et un portefeuille numérique en temps réel, avec des transactions liées à l\'API de Matera.',
-      url: 'https://pdvpix.com.br'
-    },
-    america: {
-      title: 'América Vistos Assessoria',
-      subtitle: 'Projet d\'entreprise',
-      description: 'Système de gestion de leads dans le secteur du conseil en visa américain, avec entonnoir de vente, saisie des documents d\'inscription et suivi du dossier auprès des autorités américaines. <br> Intégration avec la solution de paiement PagSeguro et la signature électronique de contrats via D4Sign.',
-      url: 'www.americavistos.com.br'
-    },
-    campanhas: {
-      title: 'Campanhas.App',
-      subtitle: 'Projet d\'entreprise',
-      description: 'Système de campagnes promotionnelles destiné au commerce, en modèle SaaS (Software as a Service). <br> Développement d\'une application Ionic 5 permettant aux clients d\'enregistrer des coupons et d\'accéder au programme de fidélité.',
-      url: 'www.campanhas.app'
-    },
-    ntwdigital: {
-      title: 'Ntw Digital',
-      subtitle: 'Projet d\'entreprise',
-      description: 'Système de franchises de cabinets comptables avec création d\'entreprise entièrement en ligne, gestion financière et émission de factures de services intégrée via Tecnospeed.',
-      url: 'www.ntwdigital.com.br'
-    },
-    tutore: {
-      title: 'Système Tutore Consulting',
-      subtitle: 'Projet d\'entreprise',
-      description: 'Système de gestion de franchises dans le conseil aux petites entreprises, avec entonnoir de vente et gestion financière.'
-    }
-  },
-
-  // S ------------------------------------------------------------
-  skills: 'Compétences',
-
-  // T ------------------------------------------------------------
-  typescript: 'Typescript',
-
-  // W ------------------------------------------------------------
-  wordpress: 'Wordpress',
-
-  // Y ------------------------------------------------------------
-  year: 'An',
-  years: 'Ans'
+  languagesTitle: 'Langues',
+  languages: [
+    { name: 'Portugais', level: 'Natif' },
+    { name: 'Anglais', level: 'Avancé' },
+    { name: 'Espagnol', level: 'Intermédiaire' },
+    { name: 'Français', level: 'Lecture et écriture' }
+  ]
 };

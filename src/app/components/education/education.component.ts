@@ -1,25 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { CarouselResponsiveOptions } from 'primeng/carousel';
-import { EDUCATION_KEYS } from 'src/app/i18n/translation.model';
+import { Translation } from 'src/app/i18n/translation.model';
 import { LangService } from 'src/app/services/lang.service';
 
 @Component({
     selector: 'app-education',
     templateUrl: './education.component.html',
-    styleUrls: ['./education.component.scss'],
     standalone: false
 })
 export class EducationComponent implements OnInit {
-  lang: any;
-  educationItems = [...EDUCATION_KEYS];
-
-  responsiveOptions: CarouselResponsiveOptions[] = [
-    {
-      breakpoint: '767px',
-      numVisible: 1,
-      numScroll: 1
-    }
-  ];
+  lang: Translation;
 
   constructor(
     private langService: LangService

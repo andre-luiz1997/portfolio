@@ -1,40 +1,46 @@
 import { Component, OnInit } from '@angular/core';
+import { Translation } from 'src/app/i18n/translation.model';
 import { LangService } from 'src/app/services/lang.service';
+
+// Ícones registrados em provideIcons no AppModule
+export const STACK = [
+  { name: 'TypeScript', icon: 'simpleTypescript' },
+  { name: 'JavaScript', icon: 'simpleJavascript' },
+  { name: 'Node.js', icon: 'simpleNodedotjs' },
+  { name: 'NestJS', icon: 'simpleNestjs' },
+  { name: 'Express', icon: 'simpleExpress' },
+  { name: 'Angular', icon: 'simpleAngular' },
+  { name: 'Ionic', icon: 'simpleIonic' },
+  { name: 'Capacitor', icon: 'simpleCapacitor' },
+  { name: 'MongoDB', icon: 'simpleMongodb' },
+  { name: 'MySQL', icon: 'simpleMysql' },
+  { name: 'Redis', icon: 'simpleRedis' },
+  { name: 'Docker', icon: 'simpleDocker' },
+  { name: 'Linux', icon: 'simpleLinux' },
+  { name: 'Git', icon: 'simpleGit' },
+  { name: 'PHP', icon: 'simplePhp' },
+  { name: 'React', icon: 'simpleReact' }
+];
 
 @Component({
     selector: 'app-skills',
     templateUrl: './skills.component.html',
-    styleUrls: ['./skills.component.scss'],
     standalone: false
 })
 export class SkillsComponent implements OnInit {
-  lang: any;
-
-  projects: any;
-
-  selectedSkill: any;
+  lang: Translation;
+  stack = STACK;
 
   constructor(
     private langService: LangService
   ) {
     this.lang = this.langService.getTranslation();
-    this.projects = this.langService.getProjects().reverse();
   }
 
   ngOnInit(): void {
     this.langService.languageChange.subscribe((value) => {
       this.lang = this.langService.getTranslation();
     })
-  }
-
-  openDetailsSection(skill: any){
-    this.selectedSkill = this.projects.find((elem: any) => {
-      return elem.key = skill;
-    })
-  }
-
-  closeDetailsSection(){
-    this.selectedSkill = undefined;
   }
 
 }

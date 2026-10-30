@@ -1,15 +1,18 @@
-<section class="education">
-    <div class="flex flex-column justify-content-center align-items-start px-8 py-8 relative">
-        <h2>{{lang.education}}</h2>
-        <p-carousel [value]="educationItems" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions" [showIndicators]="false" styleClass="education-carousel w-full">
-            <ng-template #item let-item>
-                <div class="card education-item flex flex-column align-items-start">
-                    <h6 class="title">{{lang.education_dsc[item].course}}</h6>
-                    <small class="duration">{{lang.education_dsc[item].start}} - {{lang.education_dsc[item].end !== undefined ? lang.education_dsc[item].end : lang.ongoing}}</small>
-                    <span class="location" ><ng-icon name="heroGlobeAlt" size="16px" class="location-icon" />{{lang.education_dsc[item].location}}</span>
-                    <p *ngIf="lang.education_dsc[item].description !== undefined">{{lang.education_dsc[item].description}}</p>
-                </div>
-            </ng-template>
-        </p-carousel>
+<div class="head">
+    <div class="head-text">
+        <h2 class="title">{{lang.educationTitle}}</h2>
     </div>
-</section>
+</div>
+<ul class="jobs">
+    <li *ngFor="let degree of lang.degrees" class="job">
+        <div>
+            <div class="job-top">
+                <h3>{{degree.title}}</h3>
+                <span class="period">{{degree.years}}</span>
+            </div>
+            <p>{{degree.institution}}</p>
+            <div *ngIf="degree.note" class="tags"><span class="tag">{{degree.note}}</span></div>
+        </div>
+    </li>
+</ul>
+<img class="art-corner" src="assets/img/art-education.webp" alt="" width="720" height="538">

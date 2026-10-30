@@ -1,14 +1,14 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Translation } from 'src/app/i18n/translation.model';
 import { LangService } from 'src/app/services/lang.service';
 
 @Component({
     selector: 'app-hero',
     templateUrl: './hero.component.html',
-    styleUrls: ['./hero.component.scss'],
     standalone: false
 })
 export class HeroComponent implements OnInit {
-  lang: any;
+  lang: Translation;
   constructor(
     private langService: LangService
   ) {

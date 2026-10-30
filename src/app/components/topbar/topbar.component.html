@@ -1,23 +1,9 @@
-<section class="topbar">
-    <p-toolbar styleClass="topbar-toolbar px-8 py-5">
-        <ng-template #start>
-            <nav class="flex">
-                <a href="#aboutMe" class="item">{{lang.about_me}}</a>
-                <a href="#skills" class="item">{{lang.experiences}}</a>
-                <a href="#education" class="item">{{lang.education}}</a>
-            </nav>
-        </ng-template>
-        <ng-template #end>
-            <button type="button" (click)="languagePopover.toggle($event)" class="flag">
-                <ng-icon *ngIf="langIcon" [name]="langIcon" size="40px" />
-            </button>
-            <p-popover #languagePopover styleClass="language-popover">
-                <div class="flex flex-column gap-2">
-                    <button *ngFor="let language of availableLanguages" (click)="switchLanguage(language.lang); languagePopover.hide()" class="flag language-option">
-                        <ng-icon [name]="language.icon" size="40px" />
-                    </button>
-                </div>
-            </p-popover>
-        </ng-template>
-    </p-toolbar>
-</section>
+<span class="logo" aria-hidden="true">AL</span>
+<div class="nav-links">
+    <a href="#exp">{{lang.nav.experience}}</a>
+    <a href="#edu">{{lang.nav.education}}</a>
+    <a href="#lang">{{lang.nav.languages}}</a>
+</div>
+<div class="seg" role="group" [attr.aria-label]="lang.languagesTitle">
+    <button *ngFor="let option of availableLanguages" type="button" [attr.aria-pressed]="option.lang === currentLang" (click)="switchLanguage(option.lang)">{{option.label}}</button>
+</div>

@@ -1,7 +1,12 @@
-
-
-<section class="hero flex justify-content-center align-items-start flex-column px-8" >
-    <img src="assets/img/photoProfile.png" class="profileImg" alt="">
-    <h1 class="heroTitle">{{lang.profileName}}</h1>
-    <h6 class="heroSubtitle">{{lang.profilePosition}}</h6>
-</section>
+<div class="intro-text">
+    <span class="hello">{{lang.hello}}</span>
+    <div class="intro-group">
+        <h1 class="name" aria-label="André Luiz"><span class="fx-decoder fx-andre" aria-hidden="true">André</span> <em class="fx-decoder fx-luiz" aria-hidden="true">Luiz</em></h1>
+        <p class="role">{{lang.role}}</p>
+    </div>
+    <div class="intro-group tight">
+        <p class="catch" [innerHTML]="lang.catchphrase"></p>
+        <p class="sub">{{lang.summary}}</p>
+    </div>
+</div>
+<img class="art-corner" src="assets/img/art-intro.webp" alt="" width="711" height="720">

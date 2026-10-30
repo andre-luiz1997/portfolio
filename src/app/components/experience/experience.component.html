@@ -1,0 +1,21 @@
+<div class="head">
+    <div class="head-text">
+        <h2 class="title">{{lang.experienceTitle}}</h2>
+    </div>
+</div>
+<div class="company-block">
+    <div class="company"><span class="company-name">App Marketing</span><span class="where">{{lang.experienceLocation}}</span></div>
+    <ol class="jobs">
+        <li *ngFor="let job of lang.jobs; let i = index" class="job" [class.current]="!periods[i].end">
+            <div>
+                <div class="job-top">
+                    <h3>{{job.title}}</h3>
+                    <span class="period">{{range(periods[i])}} · <b>{{duration(periods[i])}}</b></span>
+                </div>
+                <p>{{job.text}}</p>
+                <div class="tags"><span *ngFor="let tag of job.tags" class="tag">{{tag}}</span></div>
+            </div>
+        </li>
+    </ol>
+</div>
+<img class="art-corner" src="assets/img/art-experience.webp" alt="" width="622" height="720">

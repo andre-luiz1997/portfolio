@@ -1,0 +1,10 @@
+<div class="lang-head">
+    <h2 class="title">{{lang.languagesTitle}}</h2>
+</div>
+<ul class="langs">
+    <li *ngFor="let language of lang.languages" class="lang">
+        <span class="ln">{{language.name}}</span>
+        <span class="lv">{{language.level}}</span>
+    </li>
+</ul>
+<img class="art-corner" src="assets/img/art-languages.webp" alt="" width="645" height="720">
