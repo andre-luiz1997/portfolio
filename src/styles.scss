@@ -249,9 +249,13 @@ footer{font:400 13px var(--f-mono);color:var(--mute);display:flex;justify-conten
   .a-edu .art-corner{width:190px}
   .a-edu .jobs{max-width:100%}
   /* no celular as datas sobem para cima do título */
-  .job{grid-template-columns:minmax(0,1fr)}
+  .job{grid-template-columns:minmax(0,1fr);padding-left:8px}
   .job-when{order:-1;flex-direction:row;align-items:baseline;gap:8px;text-align:left}
+  .company-block{margin-bottom:0}
+  .a-lang{flex-direction:column;align-items:stretch}
+  .a-lang .langs{flex:none}
   .a-lang .art-corner{display:none}
+  .a-tech{flex-direction:column;align-items:flex-start}
   .icons{justify-content:flex-start}
   .nav{border-radius:24px}
   .nav-links{order:3;width:100%;justify-content:space-between}
