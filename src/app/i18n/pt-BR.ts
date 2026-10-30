@@ -34,9 +34,16 @@ export const ptBR: Translation = {
 
   educationTitle: 'Formação acadêmica',
   degrees: [
-    { years: '2023 – 2024', title: 'Pós-graduação em Arquitetura de Software', institution: 'FIAP', note: 'Monolito → microsserviços NestJS na AWS' },
+    {
+      years: '2023 – 2024', title: 'Pós-graduação em Arquitetura de Software', institution: 'FIAP',
+      detail: 'Trabalho final: migração de um monolito para microsserviços na AWS.',
+      tags: ['Microsserviços', 'NestJS', 'AWS']
+    },
     { years: '2015 – 2021', title: 'Bacharelado em Engenharia de Computação', institution: 'CEFET-MG' },
-    { years: '2019 – 2020', title: 'Licence Professionnelle em Redes, Mobilidade e Segurança', institution: 'Université Grenoble Alpes', note: 'Intercâmbio · Grenoble, França' }
+    {
+      years: '2019 – 2020', title: 'Licence Professionnelle em Redes, Mobilidade e Segurança', institution: 'Université Grenoble Alpes',
+      tags: ['Intercâmbio', 'Grenoble, França']
+    }
   ],
 
   languagesTitle: 'Idiomas',

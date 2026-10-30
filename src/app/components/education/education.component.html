@@ -7,8 +7,9 @@
     <li *ngFor="let degree of lang.degrees" class="job">
         <div class="job-main">
             <h3>{{degree.title}}</h3>
-            <p>{{degree.institution}}</p>
-            <div *ngIf="degree.note" class="tags"><span class="tag">{{degree.note}}</span></div>
+            <p class="institution">{{degree.institution}}</p>
+            <p *ngIf="degree.detail" class="detail">{{degree.detail}}</p>
+            <div *ngIf="degree.tags" class="tags"><span *ngFor="let tag of degree.tags" class="tag">{{tag}}</span></div>
         </div>
         <div class="job-when">
             <span class="period">{{degree.years}}</span>

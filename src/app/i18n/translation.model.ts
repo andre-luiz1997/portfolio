@@ -8,7 +8,9 @@ export interface DegreeEntry {
   years: string;
   title: string;
   institution: string;
-  note?: string;
+  /** frase curta abaixo da instituição */
+  detail?: string;
+  tags?: string[];
 }
 
 export interface LanguageEntry {

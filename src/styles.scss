@@ -204,6 +204,8 @@ img{max-width:100%}
 .period{font:400 12.5px var(--f-mono);font-variant-numeric:tabular-nums;color:var(--mute);white-space:nowrap}
 .duration{font:500 12.5px var(--f-mono);font-variant-numeric:tabular-nums;color:var(--amber-ink);white-space:nowrap}
 .job p{font-size:15px;color:#3E3A33;max-width:60ch}
+.job p.institution{font-weight:500;color:var(--text)}
+.job p.detail{font-size:14px;color:var(--mute)}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tag{font:500 11.5px var(--f-mono);color:var(--amber-ink);background:var(--butter);border-radius:999px;padding:3px 10px;white-space:nowrap}
 

@@ -34,9 +34,16 @@ export const enUS: Translation = {
 
   educationTitle: 'Education',
   degrees: [
-    { years: '2023 – 2024', title: 'Postgraduate Specialization in Software Architecture', institution: 'FIAP', note: 'Monolith → NestJS microservices on AWS' },
+    {
+      years: '2023 – 2024', title: 'Postgraduate Specialization in Software Architecture', institution: 'FIAP',
+      detail: 'Final project: migrating a monolith to microservices on AWS.',
+      tags: ['Microservices', 'NestJS', 'AWS']
+    },
     { years: '2015 – 2021', title: 'Bachelor\'s in Computer Engineering', institution: 'CEFET-MG' },
-    { years: '2019 – 2020', title: 'Licence Professionnelle in Networks, Mobility and Security', institution: 'Université Grenoble Alpes', note: 'Exchange · Grenoble, France' }
+    {
+      years: '2019 – 2020', title: 'Licence Professionnelle in Networks, Mobility and Security', institution: 'Université Grenoble Alpes',
+      tags: ['Exchange', 'Grenoble, France']
+    }
   ],
 
   languagesTitle: 'Languages',
