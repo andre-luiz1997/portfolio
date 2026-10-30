@@ -15,6 +15,10 @@ interface TypedChar {
 const NAME: [string, boolean][] = [['André', false], [' ', false], ['Luiz', true]];
 const START_DELAY = 500;
 const SPACE_PAUSE = 320;
+// ciclo: digita, segura o nome completo, apaga letra por letra e recomeça
+const HOLD_TYPED = 3800;
+const ERASE_DELAY = 55;
+const HOLD_EMPTY = 700;
 
 @Component({
     selector: 'app-hero',
@@ -31,7 +35,11 @@ export class HeroComponent implements OnInit, OnDestroy {
     private langService: LangService
   ) {
     this.lang = this.langService.getTranslation();
-    this.chars = NAME.flatMap(([word, accent]) => [...word].map(char => this.toTypedChar(char, accent)));
+    this.chars = this.buildChars();
+  }
+
+  trackByIndex(index: number): number {
+    return index;
   }
 
   ngOnInit(): void {
@@ -53,12 +61,28 @@ export class HeroComponent implements OnInit, OnDestroy {
   private typeNext(): void {
     this.typed++;
     if (this.typed >= this.chars.length) {
+      this.timer = setTimeout(() => this.eraseNext(), HOLD_TYPED);
       return;
     }
     // ritmo irregular de quem datilografa; pausa maior antes do segundo nome
     const next = this.chars[this.typed];
     const delay = next.char === ' ' ? SPACE_PAUSE : 90 + Math.random() * 110;
     this.timer = setTimeout(() => this.typeNext(), delay);
+  }
+
+  private eraseNext(): void {
+    this.typed--;
+    if (this.typed > 0) {
+      this.timer = setTimeout(() => this.eraseNext(), ERASE_DELAY);
+      return;
+    }
+    // folha nova: sorteia outro desalinhamento antes de datilografar de novo
+    this.chars = this.buildChars();
+    this.timer = setTimeout(() => this.typeNext(), HOLD_EMPTY);
+  }
+
+  private buildChars(): TypedChar[] {
+    return NAME.flatMap(([word, accent]) => [...word].map(char => this.toTypedChar(char, accent)));
   }
 
   private toTypedChar(char: string, accent: boolean): TypedChar {
