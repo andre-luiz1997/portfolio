@@ -212,7 +212,7 @@ img{max-width:100%}
 .a-exp .art-corner{width:230px}
 .a-edu .art-corner{width:310px}
 .a-exp .company-block,.a-edu .jobs{position:relative;z-index:1}
-.a-edu .jobs{max-width:calc(100% - 210px)}
+.a-edu .jobs{margin-top:14px;margin-bottom:200px}
 
 /* ---------- idiomas ---------- */
 .a-lang{background:var(--cream);flex-direction:row;align-items:center;gap:20px 32px;flex-wrap:wrap;padding-block:18px}
@@ -247,7 +247,7 @@ footer{font:400 13px var(--f-mono);color:var(--mute);display:flex;justify-conten
   .a-exp .art-corner,.a-edu .art-corner{position:relative;align-self:flex-end;margin:-8px -26px -26px 0}
   .a-exp .art-corner{width:150px}
   .a-edu .art-corner{width:190px}
-  .a-edu .jobs{max-width:100%}
+  .a-edu .jobs{margin-bottom:0}
   /* no celular as datas sobem para cima do título */
   .job{grid-template-columns:minmax(0,1fr);padding-left:8px}
   .job-when{order:-1;flex-direction:row;align-items:baseline;gap:8px;text-align:left}
