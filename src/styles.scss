@@ -379,5 +379,6 @@ section.education{
     & .p-carousel-next-button{
         background-color: #{$main-color};
         color: #{$background-color};
+        border-radius: 100%;
     }
 }
