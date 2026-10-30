@@ -258,8 +258,8 @@ footer{font:400 13px var(--f-mono);color:var(--mute);display:flex;justify-conten
   .a-tech{flex-direction:column;align-items:flex-start}
   .icons{justify-content:flex-start}
   .nav{border-radius:24px}
-  /* linha 1: logo à esquerda e idiomas à direita; linha 2: links de seção centralizados */
-  .seg{margin-left:auto}
+  /* linha 1: logo e idiomas juntos ao centro; linha 2: links de seção centralizados */
+  .nav{justify-content:center;column-gap:12px}
   .nav-links{order:3;width:100%;margin-right:0;justify-content:center}
   .nav-links a{padding:6px 8px;font-size:14px}
 }
