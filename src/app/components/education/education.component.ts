@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselResponsiveOptions } from 'primeng/carousel';
+import { EDUCATION_KEYS } from 'src/app/i18n/translation.model';
 import { LangService } from 'src/app/services/lang.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { LangService } from 'src/app/services/lang.service';
 })
 export class EducationComponent implements OnInit {
   lang: any;
-  educationItems: any = [];
+  educationItems = [...EDUCATION_KEYS];
 
   responsiveOptions: CarouselResponsiveOptions[] = [
     {
@@ -24,7 +25,6 @@ export class EducationComponent implements OnInit {
     private langService: LangService
   ) {
     this.lang = this.langService.getTranslation();
-    this.educationItems = Object.keys(this.lang.education_dsc);
   }
 
   ngOnInit(): void {
