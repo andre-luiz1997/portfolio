@@ -1,6 +1,12 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+// Apenas os módulos do PrimeFlex usados nos templates (o bundle completo passa de 370 kB)
+@import 'primeflex/core/_variables';
+@import 'primeflex/core/_mixins';
+@import 'primeflex/core/_display';
+@import 'primeflex/core/_flexbox';
+@import 'primeflex/core/_gap';
+@import 'primeflex/core/_spacing';
+@import 'primeflex/core/_size';
+@import 'primeflex/core/_position';
 
 @import '@fontsource/rubik';
 @import '@fontsource/playfair-display';
@@ -14,8 +20,43 @@
 // $background-color:      #141313; 
 // $main-gradient:           linear-gradient($main-color 0%, $secondary-color 100%);
 
+// Reset equivalente ao preflight do Tailwind (o PrimeFlex não traz um)
+*, ::before, ::after{
+    box-sizing: border-box;
+    border: 0 solid currentColor;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, hr, pre{
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
+
+img, svg{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button{
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
 html{
     scroll-behavior: smooth;
+    line-height: 1.5;
 }
 
 body{
@@ -29,8 +70,18 @@ body{
     display: none!important;
 }
 
-.animate-spin{
-    border-color: #{$font-color};
+.loader{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    border-bottom: 2px solid #{$font-color};
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 ::-webkit-scrollbar{
@@ -336,6 +387,13 @@ section.education{
     & .location{
         display: flex;
         align-items: center;
+    }
+
+    & .location-icon{
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+        filter: invert(1);
     }
 }
 

@@ -22,10 +22,7 @@
     ],
     "typeRoots": [
       "../node_modules/@types"
-    ],
-    "paths": {
-      "@app/svg/*": ["src/app/svg/*"]
-    }
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

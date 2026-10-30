@@ -7,19 +7,8 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { SkillsComponent } from './components/skills/skills.component';
-import { NgHeroiconsModule } from '@dimaslz/ng-heroicons';
-import { NgxFlagIconCssModule } from 'ngx-flag-icon-css';
 import { LangService } from './services/lang.service';
 import { EducationComponent } from './components/education/education.component';
-
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-
-import { SvgIconsModule } from '@ngneat/svg-icon';
-import {appPinIcon} from '@app/svg/pin';
-import {appGlobeIcon} from '@app/svg/globe';
-import {appChevronLeftIcon} from '@app/svg/chevron-left';
-import {appChevronRightIcon} from '@app/svg/chevron-right';
 
 @NgModule({
   declarations: [
@@ -32,27 +21,7 @@ import {appChevronRightIcon} from '@app/svg/chevron-right';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    NgHeroiconsModule,
-    NgxFlagIconCssModule,
-    FontAwesomeModule,
-    SvgIconsModule.forRoot({
-      sizes: {
-        xs: '10px',
-        sm: '12px',
-        md: '16px',
-        lg: '20px',
-        xl: '25px',
-        xxl: '30px'
-      },
-      defaultSize: 'md',
-      icons: [
-        appPinIcon,
-        appGlobeIcon,
-        appChevronLeftIcon,
-        appChevronRightIcon
-      ],
-    }),
+    AppRoutingModule
   ],
   providers: [
     LangService
