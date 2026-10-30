@@ -62,6 +62,7 @@ img{max-width:100%}
   border:1px solid var(--line); border-radius:999px; box-shadow:var(--shadow); padding:6px;
 }
 .logo{
+  text-decoration:none;
   width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
   background:var(--butter);color:var(--amber-ink);
   font-family:var(--f-display);font-style:italic;font-size:19px;
@@ -69,6 +70,7 @@ img{max-width:100%}
 .nav-links{display:flex;gap:2px;flex-wrap:wrap;margin-right:auto}
 .nav-links a{text-decoration:none;font-weight:500;font-size:14.5px;padding:8px 14px;border-radius:999px;color:var(--mute);transition:background-color var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease)}
 .nav-links a:hover{background:var(--cream);color:var(--text)}
+.nav-links a.active{background:var(--butter);color:var(--amber-ink)}
 .seg{display:flex;gap:2px;background:var(--cream);border-radius:999px;padding:3px}
 .seg button{font:500 12.5px var(--f-mono);letter-spacing:.06em;color:var(--mute);background:transparent;border:0;padding:7px 12px;border-radius:999px;cursor:pointer;transition:background-color var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease)}
 .seg button[aria-pressed="true"]{background:var(--card);color:var(--text);box-shadow:0 1px 3px rgba(70,52,10,.12)}
@@ -81,10 +83,10 @@ img{max-width:100%}
     "photo intro intro intro"
     "tech  tech  tech  tech"
     "exp   exp   edu   edu"
-    "lang  lang  lang  lang";
+    "lang  lang  lang  contact";
 }
 .a-intro{grid-area:intro}.a-photo{grid-area:photo}.a-lang{grid-area:lang}
-.a-tech{grid-area:tech}.a-exp{grid-area:exp}.a-edu{grid-area:edu}
+.a-tech{grid-area:tech}.a-exp{grid-area:exp}.a-edu{grid-area:edu}.a-contact{grid-area:contact}
 
 .card{
   position:relative; background:var(--card); border:1px solid var(--line); border-radius:var(--r);
@@ -226,10 +228,58 @@ img{max-width:100%}
 .lang .ln{font-weight:500;font-size:15px}
 .lang .lv{font:400 11.5px/1.35 var(--f-mono);color:var(--mute)}
 
+/* ---------- contato ---------- */
+.contact-links{display:flex;flex-direction:column;gap:8px}
+.contact-link{
+  display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;
+  background:var(--cream);text-decoration:none;
+  transition:background-color var(--dur-fast) var(--ease),transform var(--dur) var(--ease);
+}
+.contact-link:hover,.contact-link:focus-visible{background:var(--butter);transform:translateX(3px)}
+.contact-text{display:flex;flex-direction:column;min-width:0;flex:1}
+.contact-name{font-weight:600;font-size:15px}
+.contact-handle{font:400 12px var(--f-mono);color:var(--mute);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.contact-arrow{color:var(--amber-ink);transition:transform var(--dur) var(--ease)}
+.contact-link:hover .contact-arrow{transform:translate(2px,-2px)}
+
+/* ---------- artigos ---------- */
+.articles-page{display:flex;flex-direction:column;gap:var(--gap)}
+.page-head,.empty-state,.article{gap:14px}
+.page-head{background:linear-gradient(160deg,var(--card) 55%,var(--cream))}
+.back-link{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;font:500 12.5px var(--f-mono);color:var(--mute);text-decoration:none}
+.back-link:hover{color:var(--amber-ink)}
+.page-title{font-family:var(--f-display);font-size:clamp(2.8rem,6vw,4.6rem);line-height:.95;letter-spacing:-.02em}
+.page-lead{color:var(--mute);font-size:16px;max-width:60ch}
+.empty-state .contact-links{max-width:420px}
+.article-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.article-card{text-decoration:none;gap:10px}
+.article-card-title{font-family:var(--f-display);font-size:clamp(1.6rem,2.4vw,2rem);line-height:1.05}
+.article-card-summary{color:#3E3A33;font-size:15px}
+.read-more{display:inline-flex;align-items:center;gap:6px;margin-top:auto;font:500 12.5px var(--f-mono);color:var(--amber-ink)}
+.read-more ng-icon{transition:transform var(--dur) var(--ease)}
+.article-card:hover .read-more ng-icon{transform:translateX(3px)}
+.article-head{display:flex;flex-direction:column;gap:12px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+
+/* texto do artigo (Markdown) */
+.prose{max-width:68ch;font-size:17px;line-height:1.7;color:#3E3A33}
+.prose > * + *{margin-top:1em}
+.prose h2,.prose h3{font-family:var(--f-display);color:var(--text);line-height:1.15;margin-top:1.6em}
+.prose h2{font-size:2rem}
+.prose h3{font-size:1.5rem}
+.prose a{color:var(--amber-ink);text-decoration-color:var(--honey);text-underline-offset:3px}
+.prose ul,.prose ol{padding-left:1.3em}
+.prose li + li{margin-top:.35em}
+.prose blockquote{margin-inline:0;padding:4px 0 4px 18px;border-left:3px solid var(--sun);color:var(--mute);font-style:italic}
+.prose code{font:400 .88em var(--f-mono);background:var(--cream);padding:.12em .4em;border-radius:6px}
+.prose pre{background:var(--text);color:var(--card);padding:16px 18px;border-radius:14px;overflow-x:auto;font-size:14px;line-height:1.55}
+.prose pre code{background:none;padding:0;color:inherit}
+.prose img{border-radius:14px}
+.prose hr{border:0;border-top:1px solid var(--line);margin-block:2em}
+
 footer{font:400 13px var(--f-mono);color:var(--mute);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-inline:6px}
 
 @media (max-width:1024px){
-  .bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"photo intro" "tech tech" "exp exp" "edu edu" "lang lang"}
+  .bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"photo intro" "tech tech" "exp exp" "edu edu" "lang lang" "contact contact"}
   .langs{grid-template-columns:repeat(2,minmax(0,1fr))}
   .lang + .lang{border-left:0;padding-left:0}
   /* apresentação fica estreita no tablet: a aquarela vira textura atrás do texto */
@@ -237,7 +287,7 @@ footer{font:400 13px var(--f-mono);color:var(--mute);display:flex;justify-conten
   .a-intro .intro-text{max-width:100%}
 }
 @media (max-width:640px){
-  .bento{grid-template-columns:minmax(0,1fr);grid-template-areas:"intro" "photo" "tech" "exp" "edu" "lang"}
+  .bento{grid-template-columns:minmax(0,1fr);grid-template-areas:"intro" "photo" "tech" "exp" "edu" "lang" "contact"}
   .langs{grid-template-columns:minmax(0,1fr);min-width:0}
   .a-intro{flex-direction:column;min-height:0}
   /* no celular a aquarela continua no canto, menor */
@@ -255,6 +305,7 @@ footer{font:400 13px var(--f-mono);color:var(--mute);display:flex;justify-conten
   .job-when{order:-1;flex-direction:row;align-items:baseline;gap:8px;text-align:left}
   .company-block{margin-bottom:0}
   .a-lang{flex-direction:column;align-items:stretch}
+  .article-grid{grid-template-columns:minmax(0,1fr)}
   .a-lang .langs{flex:none}
   .a-lang .art-corner{display:none}
   .a-tech{flex-direction:column;align-items:flex-start}
@@ -270,6 +321,6 @@ footer{font:400 13px var(--f-mono);color:var(--mute);display:flex;justify-conten
   .sticker svg{animation:none}
   .tw-char.tw-in{animation:none}
   .tw.tw-empty::before,.tw-char.tw-last::after{animation:none}
-  .card,.card::after,.art-corner,.photo,.tech,.tech ng-icon,.tech::after,.nav-links a,.seg button{transition:none}
+  .card,.card::after,.art-corner,.photo,.tech,.tech ng-icon,.tech::after,.nav-links a,.seg button,.contact-link,.contact-arrow,.read-more ng-icon{transition:none}
   .card:hover,.card:hover .art-corner,.a-photo:hover .photo,.tech:hover,.tech:hover ng-icon{transform:none}
 }

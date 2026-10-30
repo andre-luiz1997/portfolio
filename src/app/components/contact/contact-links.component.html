@@ -1,0 +1,10 @@
+<div class="contact-links">
+    <a *ngFor="let link of links" class="contact-link" [href]="link.url" target="_blank" rel="noopener">
+        <ng-icon [name]="link.icon" size="20px" aria-hidden="true"></ng-icon>
+        <span class="contact-text">
+            <span class="contact-name">{{link.name}}</span>
+            <span class="contact-handle">{{link.handle}}</span>
+        </span>
+        <ng-icon class="contact-arrow" name="bootstrapArrowUpRight" size="14px" aria-hidden="true"></ng-icon>
+    </a>
+</div>

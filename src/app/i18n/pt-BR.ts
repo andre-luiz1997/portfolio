@@ -1,7 +1,7 @@
 import { Translation } from './translation.model';
 
 export const ptBR: Translation = {
-  nav: { experience: 'Experiência', education: 'Formação', languages: 'Idiomas' },
+  nav: { experience: 'Experiência', education: 'Formação', languages: 'Idiomas', articles: 'Artigos' },
   hello: 'Olá, eu sou',
   role: 'Líder Técnico · Arquitetura de Software · Full Stack',
   catchphrase: 'Do entendimento do negócio <mark>à produção.</mark>',
@@ -52,5 +52,20 @@ export const ptBR: Translation = {
     { name: 'Inglês', level: 'Avançado' },
     { name: 'Espanhol', level: 'Intermediário' },
     { name: 'Francês', level: 'Leitura e escrita' }
-  ]
+  ],
+
+  contactTitle: 'Contato',
+  contactLead: 'Onde me encontrar',
+  articles: {
+    title: 'Artigos',
+    lead: 'Textos sobre engenharia de software, arquitetura e liderança técnica.',
+    emptyTitle: 'Os primeiros artigos estão a caminho',
+    emptyText: 'Ainda não há nada publicado por aqui. Enquanto isso, você me encontra no LinkedIn e no GitHub.',
+    read: 'Ler artigo',
+    backHome: 'Voltar ao início',
+    backToList: 'Todos os artigos',
+    loading: 'Carregando artigo…',
+    notFoundTitle: 'Artigo não encontrado',
+    notFoundText: 'Este endereço não corresponde a nenhum artigo publicado.'
+  }
 };

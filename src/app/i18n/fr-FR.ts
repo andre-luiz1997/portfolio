@@ -1,7 +1,7 @@
 import { Translation } from './translation.model';
 
 export const frFR: Translation = {
-  nav: { experience: 'Expérience', education: 'Formation', languages: 'Langues' },
+  nav: { experience: 'Expérience', education: 'Formation', languages: 'Langues', articles: 'Articles' },
   hello: 'Salut, je suis',
   role: 'Lead technique · Architecture logicielle · Full Stack',
   catchphrase: 'De la compréhension du métier <mark>à la production.</mark>',
@@ -52,5 +52,20 @@ export const frFR: Translation = {
     { name: 'Anglais', level: 'Avancé' },
     { name: 'Espagnol', level: 'Intermédiaire' },
     { name: 'Français', level: 'Lecture et écriture' }
-  ]
+  ],
+
+  contactTitle: 'Contact',
+  contactLead: 'Où me trouver',
+  articles: {
+    title: 'Articles',
+    lead: 'Des textes sur le génie logiciel, l\'architecture et le leadership technique.',
+    emptyTitle: 'Les premiers articles arrivent bientôt',
+    emptyText: 'Rien n\'a encore été publié ici. En attendant, vous pouvez me trouver sur LinkedIn et GitHub.',
+    read: 'Lire l\'article',
+    backHome: 'Retour à l\'accueil',
+    backToList: 'Tous les articles',
+    loading: 'Chargement de l\'article…',
+    notFoundTitle: 'Article introuvable',
+    notFoundText: 'Cette adresse ne correspond à aucun article publié.'
+  }
 };

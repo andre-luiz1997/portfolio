@@ -1,0 +1,25 @@
+<main class="articles-page">
+    <header class="card page-head">
+        <a routerLink="/" class="back-link"><ng-icon name="bootstrapArrowLeft" size="14px" aria-hidden="true"></ng-icon>{{lang.articles.backHome}}</a>
+        <h1 class="page-title">{{lang.articles.title}}</h1>
+        <p class="page-lead">{{lang.articles.lead}}</p>
+    </header>
+
+    <div *ngIf="articles.length; else empty" class="article-grid">
+        <a *ngFor="let article of articles" class="card article-card" [routerLink]="['/artigos', article.slug]">
+            <span class="eyebrow"><time [attr.datetime]="article.date">{{formatDate(article.date)}}</time></span>
+            <h2 class="article-card-title">{{article.title}}</h2>
+            <p class="article-card-summary">{{article.summary}}</p>
+            <div class="tags"><span *ngFor="let tag of article.tags" class="tag">{{tag}}</span></div>
+            <span class="read-more">{{lang.articles.read}}<ng-icon name="bootstrapArrowRight" size="14px" aria-hidden="true"></ng-icon></span>
+        </a>
+    </div>
+
+    <ng-template #empty>
+        <section class="card empty-state">
+            <h2 class="title">{{lang.articles.emptyTitle}}</h2>
+            <p class="page-lead">{{lang.articles.emptyText}}</p>
+            <app-contact-links></app-contact-links>
+        </section>
+    </ng-template>
+</main>

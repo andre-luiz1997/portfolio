@@ -66,6 +66,13 @@ export class LangService {
     return this.lang;
   }
 
+  /** "2026-10-30" → "30 de outubro de 2026" no idioma atual */
+  formatDate(isoDate: string): string {
+    // meio-dia evita que o fuso desloque a data para o dia anterior
+    const date = new Date(`${isoDate}T12:00:00`);
+    return new Intl.DateTimeFormat(this.lang, { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
+  }
+
   private readStoredLang(): string | null {
     try {
       return localStorage.getItem(STORAGE_KEY);

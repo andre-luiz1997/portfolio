@@ -1,25 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { Translation } from './i18n/translation.model';
-import { LangService } from './services/lang.service';
+import { ViewportScroller } from '@angular/common';
+import { Component } from '@angular/core';
+
+// altura do menu fixo + folga, para as âncoras (#exp, #edu…) não ficarem escondidas atrás dele
+const NAV_OFFSET = 96;
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     standalone: false
 })
-export class AppComponent implements OnInit {
-  lang: Translation;
+export class AppComponent {
   year = new Date().getFullYear();
 
-  constructor(
-    private langService: LangService
-  ){
-    this.lang = this.langService.getTranslation();
-  }
-
-  ngOnInit(): void {
-    this.langService.languageChange.subscribe((value) => {
-      this.lang = this.langService.getTranslation();
-    });
+  constructor(viewportScroller: ViewportScroller){
+    viewportScroller.setOffset([0, NAV_OFFSET]);
   }
 }

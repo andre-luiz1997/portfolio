@@ -1,0 +1,20 @@
+<main class="bento">
+    <app-hero class="card has-art a-intro"></app-hero>
+
+    <figure class="card a-photo">
+        <div class="sticker" aria-hidden="true">
+            <svg viewBox="0 0 104 104">
+                <defs><path id="ring" d="M52,52 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/></defs>
+                <text><textPath href="#ring">FULLSTACK ✦ WEB ✦ MOBILE ✦ </textPath></text>
+                <circle class="dot" cx="52" cy="52" r="7"/>
+            </svg>
+        </div>
+        <img class="photo" src="assets/img/profile.webp" [alt]="lang.photoAlt" width="699" height="799">
+    </figure>
+
+    <app-skills class="card a-tech"></app-skills>
+    <app-experience class="card has-art a-exp" id="exp"></app-experience>
+    <app-education class="card has-art a-edu" id="edu"></app-education>
+    <app-languages class="card has-art a-lang" id="lang"></app-languages>
+    <app-contact class="card a-contact" id="contact"></app-contact>
+</main>

@@ -1,7 +1,7 @@
 import { Translation } from './translation.model';
 
 export const enUS: Translation = {
-  nav: { experience: 'Experience', education: 'Education', languages: 'Languages' },
+  nav: { experience: 'Experience', education: 'Education', languages: 'Languages', articles: 'Articles' },
   hello: 'Hi, I\'m',
   role: 'Tech Lead · Software Architecture · Full Stack',
   catchphrase: 'From business understanding <mark>to production.</mark>',
@@ -52,5 +52,20 @@ export const enUS: Translation = {
     { name: 'English', level: 'Advanced' },
     { name: 'Spanish', level: 'Intermediate' },
     { name: 'French', level: 'Reading and writing' }
-  ]
+  ],
+
+  contactTitle: 'Contact',
+  contactLead: 'Where to find me',
+  articles: {
+    title: 'Articles',
+    lead: 'Writing about software engineering, architecture and technical leadership.',
+    emptyTitle: 'The first articles are on their way',
+    emptyText: 'Nothing has been published here yet. Meanwhile, you can find me on LinkedIn and GitHub.',
+    read: 'Read article',
+    backHome: 'Back to home',
+    backToList: 'All articles',
+    loading: 'Loading article…',
+    notFoundTitle: 'Article not found',
+    notFoundText: 'This address does not match any published article.'
+  }
 };

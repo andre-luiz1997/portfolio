@@ -1,0 +1,24 @@
+<main class="articles-page">
+    <article class="card article">
+        <a routerLink="/artigos" class="back-link"><ng-icon name="bootstrapArrowLeft" size="14px" aria-hidden="true"></ng-icon>{{lang.articles.backToList}}</a>
+
+        <ng-container *ngIf="meta; else notFound">
+            <header class="article-head">
+                <span class="eyebrow"><time [attr.datetime]="meta.date">{{formatDate(meta.date)}}</time></span>
+                <h1 class="page-title">{{meta.title}}</h1>
+                <p class="page-lead">{{meta.summary}}</p>
+                <div class="tags"><span *ngFor="let tag of meta.tags" class="tag">{{tag}}</span></div>
+            </header>
+
+            <div *ngIf="html !== null; else loadingOrError" class="prose" [innerHTML]="html"></div>
+            <ng-template #loadingOrError>
+                <p class="page-lead">{{failed ? lang.articles.notFoundText : lang.articles.loading}}</p>
+            </ng-template>
+        </ng-container>
+
+        <ng-template #notFound>
+            <h1 class="page-title">{{lang.articles.notFoundTitle}}</h1>
+            <p class="page-lead">{{lang.articles.notFoundText}}</p>
+        </ng-template>
+    </article>
+</main>

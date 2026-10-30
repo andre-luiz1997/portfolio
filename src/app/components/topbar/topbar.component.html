@@ -1,8 +1,9 @@
-<span class="logo" aria-hidden="true">AL</span>
+<a routerLink="/" class="logo" aria-label="André Luiz">AL</a>
 <div class="nav-links">
-    <a href="#exp">{{lang.nav.experience}}</a>
-    <a href="#edu">{{lang.nav.education}}</a>
-    <a href="#lang">{{lang.nav.languages}}</a>
+    <a routerLink="/" fragment="exp">{{lang.nav.experience}}</a>
+    <a routerLink="/" fragment="edu">{{lang.nav.education}}</a>
+    <a routerLink="/" fragment="lang">{{lang.nav.languages}}</a>
+    <a routerLink="/artigos" routerLinkActive="active" ariaCurrentWhenActive="page">{{lang.nav.articles}}</a>
 </div>
 <div class="seg" role="group" [attr.aria-label]="lang.languagesTitle">
     <button *ngFor="let option of availableLanguages" type="button" [attr.aria-pressed]="option.lang === currentLang" (click)="switchLanguage(option.lang)">{{option.label}}</button>

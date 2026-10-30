@@ -28,8 +28,21 @@ export interface DurationUnits {
 }
 
 // Toda chave é obrigatória: um idioma sem tradução não compila
+export interface ArticlesTexts {
+  title: string;
+  lead: string;
+  emptyTitle: string;
+  emptyText: string;
+  read: string;
+  backHome: string;
+  backToList: string;
+  loading: string;
+  notFoundTitle: string;
+  notFoundText: string;
+}
+
 export interface Translation {
-  nav: { experience: string; education: string; languages: string };
+  nav: { experience: string; education: string; languages: string; articles: string };
   hello: string;
   role: string;
   /** aceita <mark> para o destaque */
@@ -48,4 +61,7 @@ export interface Translation {
   degrees: DegreeEntry[];
   languagesTitle: string;
   languages: LanguageEntry[];
+  contactTitle: string;
+  contactLead: string;
+  articles: ArticlesTexts;
 }
