@@ -1,7 +1,7 @@
 <div class="intro-text">
     <span class="hello">{{lang.hello}}</span>
     <div class="intro-group">
-        <h1 class="name" aria-label="André Luiz"><span class="fx-decoder fx-andre" aria-hidden="true">André</span> <em class="fx-decoder fx-luiz" aria-hidden="true">Luiz</em></h1>
+        <h1 class="name" aria-label="André Luiz"><span class="tw" [class.tw-empty]="typed === 0" aria-hidden="true"><span *ngFor="let ch of chars; let i = index" class="tw-char" [class.tw-in]="i < typed" [class.tw-last]="i === typed - 1" [class.tw-accent]="ch.accent" [style.--dy]="ch.dy" [style.--rot]="ch.rot" [style.--ink]="ch.ink">{{ch.char}}</span></span></h1>
         <p class="role">{{lang.role}}</p>
     </div>
     <div class="intro-group tight">

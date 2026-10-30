@@ -134,32 +134,27 @@ img{max-width:100%}
 }
 .a-intro .intro-text{position:relative;z-index:1;max-width:calc(100% - 330px)}
 
-/* Cipher: caracteres embaralhados decodificam no nome e voltam a cifrar (só CSS).
-   --ink cor final, --ink-2 acento primário, --ink-3 acento secundário (cor durante o embaralhamento).
-   Os 8 quadros ficam empilhados num único ::after e a animação desloca um quadro por vez com steps(1). */
-.name{--ink-2:var(--sun);--ink-3:#C08400}
-.fx-decoder{
-  --ink:var(--text);--lh:1.15em;
-  position:relative;display:inline-block;vertical-align:bottom;white-space:nowrap;color:transparent;
-  line-height:var(--lh);height:var(--lh);overflow:hidden;padding-right:.08em;
+/* Máquina de escrever antiga (HeroComponent): as letras já ocupam o espaço final e só aparecem quando
+   são "batidas". Cada uma fica levemente fora da linha, inclinada e com carga de tinta própria. */
+.tw{position:relative}
+.tw-char{
+  position:relative;display:inline-block;white-space:pre;visibility:hidden;
+  transform:translateY(var(--dy,0)) rotate(var(--rot,0));opacity:var(--ink,1);
 }
-.fx-luiz{--ink:var(--amber-ink)}
-.fx-decoder::after{
-  position:absolute;left:0;top:0;white-space:pre;line-height:var(--lh);color:var(--ink-3);
-  animation:fx-decoder 4s steps(1) infinite;
+.tw-char.tw-in{visibility:visible;animation:tw-strike .18s cubic-bezier(.3,1.6,.5,1) both}
+.tw-accent{font-style:italic;color:var(--amber-ink)}
+/* cursor: antes da primeira letra fica no início; depois acompanha a última letra batida */
+.tw.tw-empty::before,.tw-char.tw-last::after{
+  content:"";position:absolute;bottom:.08em;width:.06em;height:.82em;border-radius:1px;
+  background:var(--sun);animation:tw-caret 1s steps(1) infinite;
 }
-.fx-andre::after{content:"▓k#R1\A A%#r▒\A An☰r*\A Andr£\A Andr€\A André\A 4ndr€\A ▒#dR1"}
-.fx-luiz::after{content:"&Q▓1\A L%▒z\A Lu☰*\A Lu1£\A Lui€\A Luiz\A L*1€\A ▒#iQ"}
-@keyframes fx-decoder{
-  0%   { transform:translateY(0); color:var(--ink-3); }
-  8%   { transform:translateY(calc(-1 * var(--lh))); }
-  16%  { transform:translateY(calc(-2 * var(--lh))); }
-  24%  { transform:translateY(calc(-3 * var(--lh))); }
-  32%  { transform:translateY(calc(-4 * var(--lh))); }
-  40%, 82% { transform:translateY(calc(-5 * var(--lh))); color:var(--ink); }
-  88%  { transform:translateY(calc(-6 * var(--lh))); color:var(--ink-3); }
-  94%  { transform:translateY(calc(-7 * var(--lh))); }
+.tw.tw-empty::before{left:0}
+.tw-char.tw-last::after{right:-.12em}
+@keyframes tw-strike{
+  from{transform:translateY(calc(var(--dy,0) - .08em)) rotate(var(--rot,0)) scale(1.22);opacity:0;filter:blur(1.5px)}
+  to{transform:translateY(var(--dy,0)) rotate(var(--rot,0)) scale(1);opacity:var(--ink,1);filter:blur(0)}
 }
+@keyframes tw-caret{50%{opacity:0}}
 
 /* ---------- foto ---------- */
 .a-photo{padding:0;overflow:hidden;justify-content:flex-end;background:radial-gradient(120% 90% at 50% 100%, var(--honey), var(--butter) 70%);border-color:transparent;margin:0}
@@ -264,7 +259,8 @@ footer{font:400 13px var(--f-mono);color:var(--mute);display:flex;justify-conten
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .sticker svg{animation:none}
-  .fx-decoder::after{animation:none;transform:translateY(calc(-5 * var(--lh)));color:var(--ink)}
+  .tw-char.tw-in{animation:none}
+  .tw.tw-empty::before,.tw-char.tw-last::after{animation:none}
   .card,.card::after,.art-corner,.photo,.tech,.tech ng-icon,.tech::after,.nav-links a,.seg button{transition:none}
   .card:hover,.card:hover .art-corner,.a-photo:hover .photo,.tech:hover,.tech:hover ng-icon{transform:none}
 }
