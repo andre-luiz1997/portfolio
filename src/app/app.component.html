@@ -1,5 +1,5 @@
-<div class="w-full h-screen flex justify-center items-center"  *ngIf="!loaded">
-    <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-white-900"></div>
+<div class="w-full h-screen flex justify-content-center align-items-center" *ngIf="!loaded">
+    <p-progressSpinner strokeWidth="2" ariaLabel="loading" />
 </div>
 
 <div *ngIf="loaded">
@@ -8,5 +8,4 @@
     <app-about-me id="aboutMe"></app-about-me>
     <app-skills id="skills"></app-skills>
     <app-education id="education"></app-education>
-    <app-contact id="contact"></app-contact>
 </div>

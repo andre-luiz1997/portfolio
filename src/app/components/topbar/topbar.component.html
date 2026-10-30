@@ -1,18 +1,23 @@
 <section class="topbar">
-    <nav class="relative">
-        <div class="flex justify-between px-20 py-10 relative">
-            <div class="flex">
+    <p-toolbar styleClass="topbar-toolbar px-8 py-5">
+        <ng-template #start>
+            <nav class="flex">
                 <a href="#aboutMe" class="item">{{lang.about_me}}</a>
                 <a href="#skills" class="item">{{lang.experiences}}</a>
                 <a href="#education" class="item">{{lang.education}}</a>
-                <a href="#contact" class="item">{{lang.contact}}</a>
-            </div>
-            <a href="#" (click)="openLanguageModal()" class="relative no-line">
-                <span class="flag-icon" [ngClass]="langIcon !== undefined ? langIcon : '' "></span>
-                <div id="languageModal" #languageModal [ngClass]="showLanguageModal === true ? '' : 'hide' ">
-                    <button *ngFor="let language of availableLanguages" (click)="switchLanguage(language.lang)" class="flag-icon {{language.icon}}"></button>
+            </nav>
+        </ng-template>
+        <ng-template #end>
+            <button type="button" (click)="languagePopover.toggle($event)" class="flag">
+                <ng-icon *ngIf="langIcon" [name]="langIcon" size="40px" />
+            </button>
+            <p-popover #languagePopover styleClass="language-popover">
+                <div class="flex flex-column gap-2">
+                    <button *ngFor="let language of availableLanguages" (click)="switchLanguage(language.lang); languagePopover.hide()" class="flag language-option">
+                        <ng-icon [name]="language.icon" size="40px" />
+                    </button>
                 </div>
-            </a>            
-        </div>
-    </nav>
+            </p-popover>
+        </ng-template>
+    </p-toolbar>
 </section>

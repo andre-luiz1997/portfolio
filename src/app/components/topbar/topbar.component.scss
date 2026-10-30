@@ -1,34 +1,29 @@
-@import '../../../animations.scss';
+@use '../../../animations';
 
-a.no-line:after{
-    display: none;
-}
-
-.flag-icon{
-    font-size: 20px;
+// a bandeira (4:3) é renderizada maior que o círculo e recortada no centro
+.flag{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     border-radius: 100%;
     width: 30px;
     height: 30px;
-    background-size: cover;
     border: 1px solid white;
     filter: grayscale(1);
     transition: all .5s ease;
 
     &:hover{
-        filter: none; 
+        filter: none;
     }
 }
 
-#languageModal{
-    display: flex;
-    flex-direction: column;
-    grid-row-gap: 5px;
-    row-gap: 5px;
-    top: 55px;
-    right: 20px;
-    position: absolute; 
+.language-option{
+    animation: ease-down .5s ease;
 
-    // & .flag-icon{
-    //     animation: ease-down .5s ease;
-    // }
+    @for $i from 2 through 3{
+        &:nth-child(#{$i}){
+            animation-duration: #{$i * .5}s;
+        }
+    }
 }
