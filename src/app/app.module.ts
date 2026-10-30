@@ -20,9 +20,6 @@ import {appPinIcon} from '@app/svg/pin';
 import {appGlobeIcon} from '@app/svg/globe';
 import {appChevronLeftIcon} from '@app/svg/chevron-left';
 import {appChevronRightIcon} from '@app/svg/chevron-right';
-import { ContactComponent } from './components/contact/contact.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,8 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeroComponent,
     AboutMeComponent,
     SkillsComponent,
-    EducationComponent,
-    ContactComponent
+    EducationComponent
   ],
   imports: [
     BrowserModule,
@@ -57,9 +53,6 @@ import { HttpClientModule } from '@angular/common/http';
         appChevronRightIcon
       ],
     }),
-    ReactiveFormsModule,
-    FormsModule,
-    HttpClientModule
   ],
   providers: [
     LangService
