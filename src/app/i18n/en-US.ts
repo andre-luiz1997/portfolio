@@ -37,7 +37,7 @@ export const enUS: Translation = {
     {
       years: '2023 – 2024', title: 'Postgraduate Specialization in Software Architecture', institution: 'FIAP',
       detail: 'Final project: architecture for migrating a monolithic system to cloud microservices.',
-      tags: ['Microservices architecture', 'Cloud computing', 'Legacy modernization']
+      tags: ['Microservices architecture', 'Cloud computing', 'Software architecture']
     },
     { years: '2015 – 2021', title: 'Bachelor\'s in Computer Engineering', institution: 'CEFET-MG' },
     {

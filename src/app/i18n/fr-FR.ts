@@ -37,7 +37,7 @@ export const frFR: Translation = {
     {
       years: '2023 – 2024', title: 'Spécialisation en architecture logicielle', institution: 'FIAP',
       detail: 'Projet final : architecture de migration d\'un système monolithique vers des microservices dans le cloud.',
-      tags: ['Architecture microservices', 'Cloud computing', 'Modernisation de l\'existant']
+      tags: ['Architecture microservices', 'Cloud computing', 'Architecture logicielle']
     },
     { years: '2015 – 2021', title: 'Diplôme d\'ingénieur en informatique', institution: 'CEFET-MG' },
     {
