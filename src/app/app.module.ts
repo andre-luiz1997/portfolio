@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import {
-  simpleAngular, simpleCapacitor, simpleDocker, simpleExpress, simpleGit, simpleIonic, simpleJavascript, simpleLinux,
-  simpleMongodb, simpleMysql, simpleNestjs, simpleNodedotjs, simplePhp, simpleReact, simpleRedis, simpleTypescript
+  simpleAngular, simpleDocker, simpleGit, simpleIonic, simpleJavascript, simpleLinux,
+  simpleMongodb, simpleMysql, simpleNestjs, simpleNodedotjs, simplePhp, simpleReact, simpleTypescript
 } from '@ng-icons/simple-icons';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -34,8 +34,8 @@ import { LangService } from './services/lang.service';
   providers: [
     LangService,
     provideIcons({
-      simpleTypescript, simpleJavascript, simpleNodedotjs, simpleNestjs, simpleExpress, simpleAngular, simpleIonic,
-      simpleCapacitor, simpleMongodb, simpleMysql, simpleRedis, simpleDocker, simpleLinux, simpleGit, simplePhp, simpleReact
+      simpleTypescript, simpleJavascript, simpleNodedotjs, simpleNestjs, simpleAngular, simpleIonic,
+      simpleMongodb, simpleMysql, simpleDocker, simpleLinux, simpleGit, simplePhp, simpleReact
     })
   ],
   bootstrap: [AppComponent]
