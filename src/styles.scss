@@ -222,9 +222,10 @@ img{max-width:100%}
 .a-lang{background:var(--cream);flex-direction:row;align-items:center;gap:20px 32px;flex-wrap:wrap;padding-block:18px}
 .lang-head{display:flex;align-items:center;gap:16px}
 .a-lang .art-corner{--my:50%;width:110px;margin:-18px -26px -18px 0;align-self:center}
-.langs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 28px;flex:1;min-width:min(100%,520px)}
+.langs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px;flex:1;min-width:min(100%,300px)}
 .lang{display:flex;flex-direction:column;gap:2px}
-.lang + .lang{border-left:1px solid var(--line);padding-left:28px}
+/* grade 2×2: divisória só antes da coluna da direita */
+.lang:nth-child(even){border-left:1px solid var(--line);padding-left:28px}
 .lang .ln{font-weight:500;font-size:15px}
 .lang .lv{font:400 11.5px/1.35 var(--f-mono);color:var(--mute)}
 
@@ -280,8 +281,6 @@ footer{font:400 13px var(--f-mono);color:var(--mute);display:flex;justify-conten
 
 @media (max-width:1024px){
   .bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"photo intro" "tech tech" "exp exp" "edu edu" "lang lang" "contact contact"}
-  .langs{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .lang + .lang{border-left:0;padding-left:0}
   /* apresentação fica estreita no tablet: a aquarela vira textura atrás do texto */
   .a-intro .art-corner{opacity:.18}
   .a-intro .intro-text{max-width:100%}
@@ -289,6 +288,7 @@ footer{font:400 13px var(--f-mono);color:var(--mute);display:flex;justify-conten
 @media (max-width:640px){
   .bento{grid-template-columns:minmax(0,1fr);grid-template-areas:"intro" "photo" "tech" "exp" "edu" "lang" "contact"}
   .langs{grid-template-columns:minmax(0,1fr);min-width:0}
+  .lang:nth-child(even){border-left:0;padding-left:0}
   .a-intro{flex-direction:column;min-height:0}
   /* no celular a aquarela continua no canto, menor */
   .a-intro .art-corner{
