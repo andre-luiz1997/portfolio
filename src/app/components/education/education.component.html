@@ -1,16 +1,15 @@
 <section class="education">
     <div class="flex flex-column justify-content-center align-items-start px-8 py-8 relative">
         <h2>{{lang.education}}</h2>
-        <div class="card-container" id="education-card">
-            <div class="scrollable">
-                <div class="card education-item flex flex-column align-items-start" *ngFor="let item of educationItems">
+        <p-carousel [value]="educationItems" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions" [showIndicators]="false" styleClass="education-carousel w-full">
+            <ng-template #item let-item>
+                <div class="card education-item flex flex-column align-items-start">
                     <h6 class="title">{{lang.education_dsc[item].course}}</h6>
                     <small class="duration">{{lang.education_dsc[item].start}} - {{lang.education_dsc[item].end !== undefined ? lang.education_dsc[item].end : lang.ongoing}}</small>
                     <span class="location" ><img src="assets/svg/globe.svg" alt="" class="location-icon">{{lang.education_dsc[item].location}}</span>
                     <p *ngIf="lang.education_dsc[item].description !== undefined">{{lang.education_dsc[item].description}}</p>
                 </div>
-            </div>
-        </div>
-        
+            </ng-template>
+        </p-carousel>
     </div>
 </section>

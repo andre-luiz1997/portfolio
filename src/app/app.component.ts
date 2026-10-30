@@ -23,7 +23,7 @@ export class AppComponent {
   @HostListener('window:scroll',[])
   onWindowScroll() {
     var highlights = document.querySelectorAll('.highlight');
-    var timeline = document.querySelectorAll('.timeline');
+    var timeline = document.querySelectorAll('.projects-timeline');
     var timelineSteps = document.getElementsByClassName('timelineStep');
     highlights.forEach((elem) => {
       let rect = elem.getBoundingClientRect();
@@ -36,8 +36,8 @@ export class AppComponent {
 
     timeline.forEach((elem) => {
       let rect = elem.getBoundingClientRect();
-      if(rect.top >= 0 && rect.bottom <= window.innerHeight){
-        elem.classList.add('animate');
+      // dispara quando o topo da timeline entra na tela (ela é mais alta que a viewport)
+      if(rect.top >= 0 && rect.top <= window.innerHeight){
         let delay = 0;
         for(let i = 0; i <= timelineSteps.length; i++){
           let element = timelineSteps[i] as HTMLElement;

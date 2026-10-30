@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CarouselResponsiveOptions } from 'primeng/carousel';
 import { LangService } from 'src/app/services/lang.service';
-import { slider } from '../../services/slider.class';
 
 @Component({
     selector: 'app-education',
@@ -11,6 +11,14 @@ import { slider } from '../../services/slider.class';
 export class EducationComponent implements OnInit {
   lang: any;
   educationItems: any = [];
+
+  responsiveOptions: CarouselResponsiveOptions[] = [
+    {
+      breakpoint: '767px',
+      numVisible: 1,
+      numScroll: 1
+    }
+  ];
 
   constructor(
     private langService: LangService
@@ -23,10 +31,6 @@ export class EducationComponent implements OnInit {
     this.langService.languageChange.subscribe((value) => {
       this.lang = this.langService.getTranslation();
     })
-  }
-
-  ngAfterViewInit(): void{
-    slider(document.getElementById('education-card'));
   }
 
 }

@@ -1,7 +1,7 @@
 @import '../../../animations.scss';
 
-a.no-line:after{
-    display: none;
+.language-trigger{
+    display: flex;
 }
 
 .flag-icon{
@@ -15,20 +15,16 @@ a.no-line:after{
     transition: all .5s ease;
 
     &:hover{
-        filter: none; 
+        filter: none;
     }
 }
 
-#languageModal{
-    display: flex;
-    flex-direction: column;
-    grid-row-gap: 5px;
-    row-gap: 5px;
-    top: 55px;
-    right: 20px;
-    position: absolute; 
+.language-option{
+    animation: ease-down .5s ease;
 
-    // & .flag-icon{
-    //     animation: ease-down .5s ease;
-    // }
+    @for $i from 2 through 3{
+        &:nth-child(#{$i}){
+            animation-duration: #{$i * .5}s;
+        }
+    }
 }
