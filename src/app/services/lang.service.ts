@@ -11,14 +11,14 @@ export class LangService {
   private language = [
     {
       lang: 'pt-BR',
-      icon: 'flag-icon-br'
+      icon: 'flagBr'
     },
     {
       lang: 'en-US',
-      icon: 'flag-icon-us'
+      icon: 'flagUs'
     },{
       lang: 'fr-FR',
-      icon: 'flag-icon-fr'
+      icon: 'flagFr'
     }
   ];
 
@@ -251,7 +251,7 @@ export class LangService {
   skills = [
     {
       key: 'javascript',
-      icon: 'devicon-javascript-plain',
+      icon: 'simpleJavascript',
       experience: 2,
       projects: [
         'tutore',
@@ -262,55 +262,55 @@ export class LangService {
       ]
     },{
       key: 'php',
-      icon: 'devicon-php-plain',
+      icon: 'simplePhp',
       experience: 3,
     },{
       key: 'html5',
-      icon: 'devicon-html5-plain-wordmark',
+      icon: 'simpleHtml5',
       experience: 4
     },{
       key: 'css3',
-      icon: 'devicon-css3-plain-wordmark',
+      icon: 'simpleCss3',
       experience: 3
     },{
       key: 'codeigniter',
-      icon: 'devicon-codeigniter-plain-wordmark',
+      icon: 'simpleCodeigniter',
       experience: 1.5
     },{
       key: 'angularjs',
-      icon: 'devicon-angularjs-plain',
+      icon: 'simpleAngular',
       experience: 1
     },{
       key: 'typescript',
-      icon: 'devicon-typescript-plain',
+      icon: 'simpleTypescript',
       experience: 1
     },{
       key: 'mysql',
-      icon: 'devicon-mysql-plain-wordmark',
+      icon: 'simpleMysql',
       experience: 2
     },{
       key: 'laravel',
-      icon: 'devicon-laravel-plain-wordmark',
+      icon: 'simpleLaravel',
       experience: 1
     },{
       key: 'ionic',
-      icon: 'devicon-ionic-original-wordmark',
+      icon: 'simpleIonic',
       experience: 1
     },{
       key: 'nodejs',
-      icon: 'devicon-nodejs-plain-wordmark',
+      icon: 'simpleNodedotjs',
       experience: .5
     },{
       key: 'mongodb',
-      icon: 'devicon-mongodb-plain-wordmark',
+      icon: 'simpleMongodb',
       experience: .5
     },{
       key: 'express',
-      icon: 'devicon-express-original-wordmark',
+      icon: 'simpleExpress',
       experience: .3
     },{
       key: 'wordpress',
-      icon: 'devicon-wordpress-plain',
+      icon: 'simpleWordpress',
       experience: 1
     },
   ];

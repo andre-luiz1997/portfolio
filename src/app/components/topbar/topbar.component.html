@@ -8,12 +8,14 @@
             </nav>
         </ng-template>
         <ng-template #end>
-            <button type="button" (click)="languagePopover.toggle($event)" class="language-trigger">
-                <span class="flag-icon" [ngClass]="langIcon !== undefined ? langIcon : '' "></span>
+            <button type="button" (click)="languagePopover.toggle($event)" class="flag">
+                <ng-icon *ngIf="langIcon" [name]="langIcon" size="40px" />
             </button>
             <p-popover #languagePopover styleClass="language-popover">
                 <div class="flex flex-column gap-2">
-                    <button *ngFor="let language of availableLanguages" (click)="switchLanguage(language.lang); languagePopover.hide()" class="language-option flag-icon {{language.icon}}"></button>
+                    <button *ngFor="let language of availableLanguages" (click)="switchLanguage(language.lang); languagePopover.hide()" class="flag language-option">
+                        <ng-icon [name]="language.icon" size="40px" />
+                    </button>
                 </div>
             </p-popover>
         </ng-template>

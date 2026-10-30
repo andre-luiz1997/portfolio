@@ -1,15 +1,14 @@
 @import '../../../animations.scss';
 
-.language-trigger{
+// a bandeira (4:3) é renderizada maior que o círculo e recortada no centro
+.flag{
     display: flex;
-}
-
-.flag-icon{
-    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     border-radius: 100%;
     width: 30px;
     height: 30px;
-    background-size: cover;
     border: 1px solid white;
     filter: grayscale(1);
     transition: all .5s ease;

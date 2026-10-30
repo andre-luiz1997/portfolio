@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { flagBr, flagFr, flagUs } from '@ng-icons/flag-icons';
+import { heroGlobeAlt } from '@ng-icons/heroicons/outline';
 import { providePrimeNG } from 'primeng/config';
 import { Carousel } from 'primeng/carousel';
 import { Popover } from 'primeng/popover';
@@ -30,6 +33,7 @@ import { PortfolioPreset } from './theme';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgIconComponent,
     Carousel,
     Popover,
     ProgressSpinner,
@@ -39,6 +43,7 @@ import { PortfolioPreset } from './theme';
   providers: [
     LangService,
     provideAnimationsAsync(),
+    provideIcons({ heroGlobeAlt, flagBr, flagUs, flagFr }),
     providePrimeNG({
       theme: {
         preset: PortfolioPreset,
