@@ -3,9 +3,10 @@ import { LangService } from 'src/app/services/lang.service';
 import { slider } from '../../services/slider.class';
 
 @Component({
-  selector: 'app-education',
-  templateUrl: './education.component.html',
-  styleUrls: ['./education.component.scss']
+    selector: 'app-education',
+    templateUrl: './education.component.html',
+    styleUrls: ['./education.component.scss'],
+    standalone: false
 })
 export class EducationComponent implements OnInit {
   lang: any;

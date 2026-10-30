@@ -3,9 +3,10 @@ import { DOCUMENT } from '@angular/common';
 import { LangService } from './services/lang.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: false
 })
 export class AppComponent {
   loaded: any = false;
