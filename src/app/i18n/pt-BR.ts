@@ -36,8 +36,8 @@ export const ptBR: Translation = {
   degrees: [
     {
       years: '2023 – 2024', title: 'Pós-graduação em Arquitetura de Software', institution: 'FIAP',
-      detail: 'Trabalho final: migração de um monolito para microsserviços na AWS.',
-      tags: ['Microsserviços', 'NestJS', 'AWS']
+      detail: 'Trabalho final: arquitetura de migração de um sistema monolítico para microsserviços em nuvem.',
+      tags: ['Arquitetura de microsserviços', 'Computação em nuvem', 'Modernização de legado']
     },
     { years: '2015 – 2021', title: 'Bacharelado em Engenharia de Computação', institution: 'CEFET-MG' },
     {

@@ -36,8 +36,8 @@ export const frFR: Translation = {
   degrees: [
     {
       years: '2023 – 2024', title: 'Spécialisation en architecture logicielle', institution: 'FIAP',
-      detail: 'Projet final : migration d\'un monolithe vers des microservices sur AWS.',
-      tags: ['Microservices', 'NestJS', 'AWS']
+      detail: 'Projet final : architecture de migration d\'un système monolithique vers des microservices dans le cloud.',
+      tags: ['Architecture microservices', 'Cloud computing', 'Modernisation de l\'existant']
     },
     { years: '2015 – 2021', title: 'Diplôme d\'ingénieur en informatique', institution: 'CEFET-MG' },
     {
