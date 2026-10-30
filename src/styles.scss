@@ -1,18 +1,7 @@
-// Apenas os módulos do PrimeFlex usados nos templates (o bundle completo passa de 370 kB)
-@import 'primeflex/core/_variables';
-@import 'primeflex/core/_mixins';
-@import 'primeflex/core/_display';
-@import 'primeflex/core/_flexbox';
-@import 'primeflex/core/_gap';
-@import 'primeflex/core/_spacing';
-@import 'primeflex/core/_size';
-@import 'primeflex/core/_position';
-
-@import '@fontsource/rubik';
-@import '@fontsource/playfair-display';
-
-@import './animations.scss';
-@import './vars.scss';
+@use '@fontsource/rubik';
+@use '@fontsource/playfair-display';
+@use './animations';
+@use './vars' as *;
 
 // $main-color:            #f7ba2c;
 // $secondary-color:       #ea5459;

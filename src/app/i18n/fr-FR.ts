@@ -97,7 +97,7 @@ export const frFR: Translation = {
       title: 'AppFintech',
       subtitle: 'Projet d\'entreprise',
       description: 'Écosystème de transactions via PIX, permettant l\'intégration avec des terminaux de point de vente et un portefeuille numérique en temps réel, avec des transactions liées à l\'API de Matera.',
-      url: 'www.appfintech.com.br'
+      url: 'https://pdvpix.com.br'
     },
     america: {
       title: 'América Vistos Assessoria',

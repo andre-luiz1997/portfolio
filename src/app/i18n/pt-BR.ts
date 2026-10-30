@@ -97,7 +97,7 @@ export const ptBR: Translation = {
       title: 'AppFintech',
       subtitle: 'Projeto empresarial',
       description: 'Ecossistema de transações via PIX, possibilitando integração com PDV (Ponto de Venda) e carteira digital em tempo-real com transações vinculadas à API da Matera.',
-      url: 'www.appfintech.com.br'
+      url: 'https://pdvpix.com.br'
     },
     america: {
       title: 'América Vistos Assessoria',
